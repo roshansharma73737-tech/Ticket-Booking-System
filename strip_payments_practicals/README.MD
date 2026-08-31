@@ -12,5 +12,9 @@ step ---5---> create  start up entry in teh server is like connection of the  ro
 
 step --6---> create the payment routes  for the following   using the same as  [ authentication , authorization ]  can access the payment as the login page 
 
+step --7 ----> create the webhook is part of the stripe of the that recieve the  trusted message regarding the  payments of user  by the  stripe  by the webhook   and the strip thats update the database    [ the  payment pending or  paid ] ---> 
 
-step --7 ----> create the webhook means  is related to the stripe send the webhook to the database like base according transcation is recorded or  not 
+ inner step of the step 7---> in the webhook   colledct the raw data from stripe  regarding the  payments details   [ pending  or  paid ]
+
+
+ 
