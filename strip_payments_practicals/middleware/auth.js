@@ -8,7 +8,7 @@ function verifytoken(req, res,next){
     const token = authheader &&  authheader.split(' ')[1];
 
     if (!token) {
-        return  res.status(402).json({error : 'message the in no given '});
+        return  res.status(402).json({error : 'Token is  not given '});
     }
 
     jwt.verify(token, process.env.JWT_SECRET, (err ,decoded) =>{

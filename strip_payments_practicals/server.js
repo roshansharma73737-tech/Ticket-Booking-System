@@ -1,12 +1,12 @@
 
 
-require('dotenv').config();  // for the impoet the environment 
+require('dotenv').config();   // for the import the environment 
 const express = require('express'); //  for the start the application 
 const cors = require('cors ');  // for the fortend and backend connection 
 
-const authroutes = require('./routes/authroutes');  // import the auth routes file  from  the middleware folder--->
+const  authroutes = require('./routes/authroutes');  // import the auth routes file  from  the middleware folder--->
 const  paymentsroutes = require('./routes/payments');  // import the payments routes file  form the routes folder--->
-const webhookroutes = require('./routes/webhook'); // import the webhook     routes file  form the routes folder--->
+const  webhookroutes = require('./routes/webhook'); // import the webhook     routes file  form the routes folder--->
 
 
 

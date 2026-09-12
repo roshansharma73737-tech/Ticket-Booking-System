@@ -11,8 +11,8 @@ const stripe = stripe(process.env.STRIPE_SECRET_KEY);   // import the secret key
 
 // create the upi string for the only indian currency  ever other country supported routes  totcard payment -->
 const CURRENCY_BY_COUNRY =  {
-    IND : 'inr',
-    US : 'usd',
+    IND : 'INR',
+    USD : 'USD',
     GB : 'gbp',
     AE : 'aed'
 };

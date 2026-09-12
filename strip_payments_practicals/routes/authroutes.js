@@ -3,7 +3,7 @@
 
 const  express = require('express');
 const jwt = require('jsonwebtoken');
-const{get} = require('../database/db');
+const {get} = require('../database/db');
 
 // create  the router the for  the api-->
 const router = express.router();
@@ -18,7 +18,7 @@ router.post('/login' , async (req ,  res ,) =>{
     if (!user) return req.status(404).json({message : 'invalid credentials'});
 
     const token = jwt.sign({id:user.id,username: user.username},process.env.JWT_SECRET,{expiresIn: ' 2h'});
-    req.json({token }); 
+    req.json({token}); 
 });
 
 module.exports = router;
