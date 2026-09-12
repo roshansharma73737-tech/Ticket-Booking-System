@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = "utf-8">
+    <title>
+        strip  + jwt  or upi and sql practical--
+        <link rel="indexsheet" herf="index.css">
+    </title>
+</head>
+<body>
+
+    <div id = "loginbox "  class="login-1">
+        <h2>Login</h2>
+        <input id = "usesrname" placeholder=" username" value = "student">
+        <input id ="password" placeholder="password" value ="student123">
+        <button onclick="login()">  Login </button>
+        <p id="login "  class="error">  </p>
+      
+    </div>
+
+      <div id="login-btn" class="login-1" style ="display: none">
+        <h2> MAke payment </h2>
+
+        <label> country </label>
+        <select id ="country">
+            <option value ="IND"> India (upi or)</option>
+            <option value ="USD"> U>S dollar (strip card )</option>
+            <option value ="GB"> germany (strip card )</option>
+            <option value ="AE"> Iran (strip card )</option>
+        </select>
+
+        <label>Amount</label>
+        <input id= "amount" type="number" value="1000">
+        <button onclick="paynow()"> Pay</button>
+
+        <div id="upi-section" style="display: none">
+            <p> scan this way to payment form the upi app </p>
+            <img id="qr-image" alt="UPI QR code">
+            <button onclick="confirmupi()"> I' ve paid (simulate confirmation ) </button> 
+        </div>
+
+        <div id="  card section " style="display: none">
+            <div id = "card-element" ></div>
+            <button onclick="paymentconfirm()">  Confirm card  payment </button>
+        </div>
+
+        <p id="status"> </p>
+
+        <button onclick="loadtransaction()"> view the tracnsactions </button>
+        <ul id="transaction-list " > </ul>
+      </div>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="index.js"></script>
+</body>
+</html>
