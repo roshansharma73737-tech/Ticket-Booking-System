@@ -1,5 +1,3 @@
-
-
 require('dotenv').config();   // for the import the environment 
 const express = require('express'); //  for the start the application 
 const cors = require('cors ');  // for the fortend and backend connection 
@@ -12,6 +10,7 @@ const  webhookroutes = require('./routes/webhook'); // import the webhook     ro
 
 // create the server application -->
 const app = express();
+app.use(cors());
 
 // for the particular the webhook   because the  strip needs the raw, unprased body ---> 
 app.use('api/payment/webhook',webhookroutes);
