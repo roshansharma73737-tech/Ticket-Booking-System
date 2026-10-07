@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stripe + JWT + QR + SQL Practical</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="login-box" class="card">
+    <h2>Login</h2>
+    <input id="username" placeholder="username" value="student">
+    <input id="password" type="password" placeholder="password" value="college123">
+    <button onclick="login()">Login</button>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <div id="payment-box" class="card" style="display:none">
+    <h2>Make a payment</h2>
+
+    <label>Country</label>
+    <select id="country">
+      <option value="IN">India (UPI QR)</option>
+      <option value="US">United States (Stripe card, USD)</option>
+      <option value="GB">United Kingdom (Stripe card, GBP)</option>
+      <option value="AE">UAE (Stripe card, AED)</option>
+    </select>
+
+    <label>Amount</label>
+    <input id="amount" type="number" value="499">
+
+    <button onclick="payNow()">Pay</button>
+
+    <div id="upi-section" style="display:none">
+      <p>Scan this with any UPI app:</p>
+      <img id="qr-image" alt="UPI QR code">
+      <button onclick="confirmUpi()">I've paid (simulate confirmation)</button>
+    </div>
+
+    <div id="card-section" style="display:none">
+      <div id="card-element"></div>
+      <button onclick="confirmCardPayment()">Confirm card payment</button>
+    </div>
+
+    <p id="status"></p>
+
+    <button onclick="loadTransactions()">View my transactions</button>
+    <ul id="transaction-list"></ul>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js"></script>
+</body>
+</html>
